@@ -19,4 +19,9 @@ describe('recipeBook', function() {
     assert.strictEqual(0, recipeBook.recipes.length);
   })
 
+  it('should be able to add a recipe', function(){
+    recipeBook.addRecipe(recipe);
+    assert.strictEqual(1, recipeBook.recipes.length);
+  })
+
 })
