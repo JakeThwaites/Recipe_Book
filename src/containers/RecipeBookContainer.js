@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomePage from '../components/HomePage';
+import RecipeList from '../components/RecipeList';
 
 class RecipeBookContainer extends Component {
 
@@ -15,6 +16,7 @@ class RecipeBookContainer extends Component {
            <Router>
               <Fragment>
                 <Route exact path="/" component={HomePage} />
+                <RecipeList />
               </Fragment>
            </Router>
         )
