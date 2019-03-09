@@ -8,20 +8,7 @@ const NavBar = () => {
 
          <div className="navchild">
             <Link to="/">
-               <Logo />
             </Link>
-         </div>
-
-         <div className="navchild">
-            <Link to="/Explore" style={{ textDecoration: 'none' }} className="navlink">
-               <ExploreButton />
-            </Link>
-         </div>
-
-         <div className="navchild">
-            <Link to="/CreatureList" style={{ textDecoration: 'none' }} className="navlink">
-               CreatureList
-               </Link>
          </div>
       </div>
    )

@@ -1,29 +1,18 @@
 import React, { Component } from "react";
 import RecipeDetail from './RecipeDetail';
-import recipeData from '../models/RecipeData';
 
 class RecipeList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {data: recipeData};
-  }
+
   render() {
-    const recipesList = this.props.data.map(recipe, index){
+    const recipeNodes = this.props.data.map(recipe => {
       return (
-          <div key={index} className="recipe">
-            <RecipeDetail
-               name={recipe.name}
-               ingredients={recipe.ingredients}
-               instructions={recipe.instructions}
-            >
-            </RecipeDetail>
-         </div>
+        <RecipeDetail name={recipe.name} ingredients={recipe.ingredients} instructions={recipe.instructions} key={recipe.id}></RecipeDetail>
       );
-    }
+    });
+
     return (
       <div className="recipe-list">
-        This is the recipe list.
-        {recipesList}
+        {recipeNodes}
       </div>
     );
   }

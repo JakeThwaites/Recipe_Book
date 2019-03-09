@@ -2,11 +2,19 @@ import React, { Component } from "react";
 
 class RecipeDetail extends Component {
   render(recipe) {
+    const ingredientsList = this.props.ingredients.map((ingredient) => {
+      return <li>{ingredient}</li>
+    })
+
+    const instructions = this.props.instructions.map((instruction) => {
+      return <li>{instruction}</li>
+    })
+
     return (
       <div className="recipe">
-        <h1>Name: {recipe.name}</h1>
-        <p>Ingredients: {recipe.ingredients}</p>
-        <p>Instructions: {recipe.instructions}</p>
+        <h4>{this.props.name}</h4>
+        <ul>{ingredientsList}</ul>
+        <ol>{instructions}</ol>
       </div>
     );
   }
