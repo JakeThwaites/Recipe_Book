@@ -7,6 +7,7 @@ class RecipeDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: props.id,
       name: props.name,
       ingredients: props.ingredients,
       instructions: props.instructions,

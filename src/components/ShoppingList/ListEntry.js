@@ -1,4 +1,5 @@
 import React, { Component }from "react";
+import './ListEntry.css';
 
 class ListEntry extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class ListEntry extends Component {
     render() {
         const { ingredient } = this.state;
         return (
-            <li>{ingredient}</li>
+            <li onClick={this.props.onClick}>{ingredient}</li>
         )
     }
 }

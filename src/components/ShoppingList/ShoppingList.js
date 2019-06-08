@@ -9,16 +9,33 @@ class ShoppingList extends Component {
         }
     }
 
+    componentDidMount = () => {
+        this.getIngredients();
+    }
+
+    getIngredients = () => {
+        const ingredientsData = this.props.location.state.ingredients;
+        const ingredients = ingredientsData.map((i) => {
+            return { name: i, inBasket: false };
+        })
+        this.setState({ ingredients });        
+    }
+
+    handleIngredientClick = (ingredient) => {
+        console.log("list item clicked");
+    }
+
     renderShoppingList = () => {
         const { ingredients } = this.state;
         const list = ingredients.map((i) => {
-        return <ListEntry ingredient={i}/>
+            return <ListEntry ingredient={i} onClick={this.handleIngredientClick}/>
         });
 
         return list;
     }
 
     render() {
+        console.log(this.state);
         const ingredientsList = this.renderShoppingList();
         return (
             <>
