@@ -8,8 +8,8 @@ describe('recipeBook', function() {
   let recipeBook;
 
   beforeEach(function(){
-    ingredients = ["Bread", "Jam"];
-    instructions = ["Put jam on a slice of bread", "Put another slice of bread on top of the first"];
+    const ingredients = ["Bread", "Jam"];
+    const instructions = ["Put jam on a slice of bread", "Put another slice of bread on top of the first"];
     recipe = new Recipe("Jam Sandwich", ingredients, instructions);
     recipeBook = new RecipeBook();
 

@@ -1,34 +1,29 @@
 import React, { Component } from "react";
 import IngredientList from './IngredientList.js';
+import { Link } from 'react-router-dom';
 
-// class RecipeDetail extends Component {
-//   render(recipe) {
-//     const ingredientsList = this.props.ingredients.map((ingredient) => {
-//       return <li>{ingredient}</li>
-//     })
-//
-//     const instructions = this.props.instructions.map((instruction) => {
-//       return <li>{instruction}</li>
-//     })
-//
-//     return (
-//       <div className="recipe">
-//         <h4>{this.props.name}</h4>
-//         <IngredientList ingredients={this.props.ingredients} />
-//         <ol>{instructions}</ol>
-//       </div>
-//     );
-//   }
-// }
 
-function RecipeDetail(props){
-  return (
-    <div className="recipe">
-    <h4>{props.name}</h4>
-    <IngredientList ingredients={props.ingredients} />
-    <ol>{props.instructions}</ol>
-    </div>
-  )
+class RecipeDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: props.name,
+      ingredients: props.ingredients,
+      instructions: props.instructions,
+    }
+  }
+
+  render() {
+    const { name, ingredients, instructions } = this.state;
+    return (
+      <div className="recipe">
+        <h4>{name}</h4>
+        <IngredientList ingredients={ingredients} />
+        <Link to={{ pathname: '/shopping-list', state: { ingredients } }}>Create Shopping List</Link>
+        <ol>{instructions}</ol>
+      </div>
+    )
+  }
 }
 
 export default RecipeDetail;

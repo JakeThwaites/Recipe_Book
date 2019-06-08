@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import RecipeBox from '../containers/RecipeBox';
 import NavBar from './NavBar';
 import './Main.css'
+import ShoppingList from './ShoppingList';
 
 class Main extends Component {
   constructor() {
@@ -18,6 +19,7 @@ class Main extends Component {
           <NavBar />
           <Route exact path="/" component={HomePage} />
           <Route path="/recipes" component={RecipeBox} />
+          <Route path="/shopping-list" component={ShoppingList} />
         </React.Fragment>
       </Router>
     );

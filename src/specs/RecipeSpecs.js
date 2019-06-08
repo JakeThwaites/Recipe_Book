@@ -4,6 +4,8 @@ const Recipe = require('../models/Recipe.js');
 
 describe('recipe', function() {
   let recipe;
+  let ingredients;
+  let instructions;
 
   beforeEach(function(){
     ingredients = ["Bread", "Jam"];
