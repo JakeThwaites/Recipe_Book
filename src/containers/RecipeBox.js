@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RecipeList from '../components/RecipeList';
+import RecipeList from '../components/Recipe/RecipeList';
 
 class RecipeBox extends Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import HomePage from './HomePage';
 import RecipeBox from '../containers/RecipeBox';
 import NavBar from './NavBar';
 import './Main.css'
-import ShoppingList from './ShoppingList';
+import ShoppingList from './ShoppingList/ShoppingList';
 
 class Main extends Component {
   constructor() {

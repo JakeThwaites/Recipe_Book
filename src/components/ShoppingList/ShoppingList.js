@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ListEntry from './ListEntry';
 
 class ShoppingList extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class ShoppingList extends Component {
     renderShoppingList = () => {
         const { ingredients } = this.state;
         const list = ingredients.map((i) => {
-            return <li>{i}</li>;
+        return <ListEntry ingredient={i}/>
         });
 
         return list;
