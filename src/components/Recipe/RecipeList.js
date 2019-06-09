@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import RecipeDetail from './RecipeDetail';
 import './RecipeList.css';
+import Button from 'react-bootstrap/Button';
+
 
 class RecipeList extends Component {
 
@@ -15,9 +17,8 @@ class RecipeList extends Component {
   }
 
   renderAddButton() {
-    //TODO: change to react boostrap button
     return (
-      <a href="/add-recipe">Add New Recipe</a>
+      <Button id="add-button" href="/add-recipe" variant="primary">Add New Recipe</Button>
     )
   }
 
