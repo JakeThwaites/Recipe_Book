@@ -4,7 +4,7 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: props.name,
+            name: props.name ? props.name : "Jake",
         }
     }
 

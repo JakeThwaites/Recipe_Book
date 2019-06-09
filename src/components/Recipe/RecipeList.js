@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RecipeDetail from './RecipeDetail';
+import './RecipeList.css';
 
 class RecipeList extends Component {
 
@@ -13,16 +14,36 @@ class RecipeList extends Component {
     }
   }
 
-  render() {
+  renderAddButton() {
+    //TODO: change to react boostrap button
+    return (
+      <a href="/add-recipe">Add New Recipe</a>
+    )
+  }
+
+  renderRecipeList = () => {
     const recipeNodes = this.props.data.map(recipe => {
       return (
-        <RecipeDetail name={recipe.name} ingredients={recipe.ingredients} instructions={recipe.instructions} key={recipe.id}></RecipeDetail>
+        <div className="recipe-detail">
+          <RecipeDetail name={recipe.name} ingredients={recipe.ingredients} instructions={recipe.instructions} key={recipe.id}></RecipeDetail>
+        </div>
       );
     });
 
+    return recipeNodes;
+  }
+
+  render() {
+    const recipeNodes = this.renderRecipeList();
+    const addButton = this.renderAddButton();
     return (
-      <div className="recipe-list">
-        {recipeNodes}
+      <div>
+        <div className="add-button"> 
+          {addButton}
+        </div>
+        <div className="recipe-list">
+          {recipeNodes}
+        </div>
       </div>
     );
   }
