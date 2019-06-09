@@ -5,7 +5,7 @@ class ShoppingList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ingredients: props.location.state.ingredients,
+            ingredients: [],
         }
     }
 
@@ -22,7 +22,7 @@ class ShoppingList extends Component {
     }
 
     handleIngredientClick = (ingredient) => {
-        console.log("list item clicked");
+        // console.log(ingredient);
     }
 
     renderShoppingList = () => {

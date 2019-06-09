@@ -12,7 +12,7 @@ class ListEntry extends Component {
     render() {
         const { ingredient } = this.state;
         return (
-            <li onClick={this.props.onClick}>{ingredient}</li>
+            <li onClick={this.props.onClick}>{ingredient.name}</li>
         )
     }
 }
